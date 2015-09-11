@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="bjmi.jdt.extensions.feature_0.0.0.qualifier.jar" id="bjmi.jdt.extensions.feature" version="0.0.0">
+      <category name="jdt.extensions"/>
+   </feature>
+   <category-def name="jdt.extensions" label="jdt extension"/>
+</site>
