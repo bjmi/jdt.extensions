@@ -1,4 +1,4 @@
-package derivedresources.preferences;
+package bjmi.derivedresources.preferences;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;

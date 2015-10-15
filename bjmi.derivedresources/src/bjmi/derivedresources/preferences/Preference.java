@@ -1,10 +1,10 @@
-package derivedresources.preferences;
+package bjmi.derivedresources.preferences;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
  * TODO (michael) document me

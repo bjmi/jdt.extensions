@@ -1,4 +1,4 @@
-package derivedresources.decoration;
+package bjmi.derivedresources.decoration;
 
 import static org.eclipse.core.resources.IResource.CHECK_ANCESTORS;
 
@@ -23,8 +23,8 @@ import com.google.common.cache.LoadingCache;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
 
-import derivedresources.core.Logging;
-import derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.core.Logging;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
  * A {@link ILabelDecorator LabelDecorator} that gray out icons.

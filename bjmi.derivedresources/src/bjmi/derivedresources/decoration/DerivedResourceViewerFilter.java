@@ -1,4 +1,4 @@
-package derivedresources.decoration;
+package bjmi.derivedresources.decoration;
 import static org.eclipse.core.resources.IResource.CHECK_ANCESTORS;
 
 import org.eclipse.core.resources.IResource;

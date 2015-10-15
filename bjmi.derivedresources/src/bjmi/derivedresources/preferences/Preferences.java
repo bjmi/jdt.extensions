@@ -1,4 +1,4 @@
-package derivedresources.preferences;
+package bjmi.derivedresources.preferences;
 
 import java.util.List;
 

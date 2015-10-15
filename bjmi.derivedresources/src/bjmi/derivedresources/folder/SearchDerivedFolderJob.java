@@ -1,4 +1,4 @@
-package derivedresources.folder;
+package bjmi.derivedresources.folder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,11 +16,11 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.IHandlerService;
 
-import derivedresources.core.Logging;
-import derivedresources.folder.DerivedFolderVisitor.VisitorStrategy;
-import derivedresources.internal.DerivedResoucesMessages;
-import derivedresources.internal.DerivedResourcePlugin;
-import derivedresources.preferences.Preferences;
+import bjmi.derivedresources.core.Logging;
+import bjmi.derivedresources.folder.DerivedFolderVisitor.VisitorStrategy;
+import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.preferences.Preferences;
 
 /**
  * Search for folders that aren't marked as derived.

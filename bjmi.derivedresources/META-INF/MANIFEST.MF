@@ -10,4 +10,4 @@ Require-Bundle: org.eclipse.ui;bundle-version="[3.5.2,4.0.0)",
  com.google.guava;bundle-version="15.0.0"
 Bundle-Vendor: %bundle.vendor
 Bundle-ActivationPolicy: lazy
-Bundle-Activator: derivedresources.internal.DerivedResourcePlugin
+Bundle-Activator: bjmi.derivedresources.internal.DerivedResourcePlugin

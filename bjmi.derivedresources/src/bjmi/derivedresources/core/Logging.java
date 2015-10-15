@@ -1,9 +1,9 @@
-package derivedresources.core;
+package bjmi.derivedresources.core;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
 
-import derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
  * TODO(michael) document me

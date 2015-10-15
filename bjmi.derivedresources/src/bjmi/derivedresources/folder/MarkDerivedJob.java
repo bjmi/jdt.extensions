@@ -1,4 +1,4 @@
-package derivedresources.folder;
+package bjmi.derivedresources.folder;
 
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -11,10 +11,10 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PlatformUI;
 
-import derivedresources.core.Logging;
-import derivedresources.folder.DerivedFolderVisitor.VisitorStrategy;
-import derivedresources.internal.DerivedResoucesMessages;
-import derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.core.Logging;
+import bjmi.derivedresources.folder.DerivedFolderVisitor.VisitorStrategy;
+import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
  * Search for folders that aren't marked as derived.

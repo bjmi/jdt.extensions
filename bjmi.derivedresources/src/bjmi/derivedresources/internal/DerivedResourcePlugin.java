@@ -1,14 +1,14 @@
-package derivedresources.internal;
+package bjmi.derivedresources.internal;
 
-import static derivedresources.preferences.Preferences.FOLDER_NAMES;
-import static derivedresources.preferences.Preferences.SCAN_IN_BACKGROUND;
+import static bjmi.derivedresources.preferences.Preferences.FOLDER_NAMES;
+import static bjmi.derivedresources.preferences.Preferences.SCAN_IN_BACKGROUND;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import derivedresources.folder.SearchDerivedFolderJob;
-import derivedresources.preferences.PreferenceConverter;
+import bjmi.derivedresources.folder.SearchDerivedFolderJob;
+import bjmi.derivedresources.preferences.PreferenceConverter;
 
 /**
  * {@link BundleActivator} of derived resouces bundle.

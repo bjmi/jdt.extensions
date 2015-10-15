@@ -1,4 +1,4 @@
-package derivedresources.internal;
+package bjmi.derivedresources.internal;
 
 import org.eclipse.osgi.util.NLS;
 

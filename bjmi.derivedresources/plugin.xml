@@ -4,7 +4,7 @@
          point="org.eclipse.ui.decorators">
       <decorator
             adaptable="true"
-            class="derivedresources.decoration.DerivedResourceLabelDecorator"
+            class="bjmi.derivedresources.decoration.DerivedResourceLabelDecorator"
             id="derivedresources.decoration.derivedResourceDecorator"
             label="%DerivedResourceLabelDecorator.label"
             lightweight="false"
@@ -22,7 +22,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="derivedresources.folder.MarkDerivedHandler"
+            defaultHandler="bjmi.derivedresources.folder.MarkDerivedHandler"
             id="derivedresources.folder.mark"
             name="%MarkDerivedCommand.name">
       </command>
@@ -41,7 +41,7 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="derivedresources.preferences.DerivedResourcesPreferencePage"
+            class="bjmi.derivedresources.preferences.DerivedResourcesPreferencePage"
             id="deriveddecoration.preferences.DerivedResourcesPreferencePage"
             name="%DerivedResourcesPreferencePage.name">
       </page>
@@ -49,7 +49,7 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="derivedresources.preferences.PreferenceInitializer">
+            class="bjmi.derivedresources.preferences.PreferenceInitializer">
       </initializer>
    </extension>
    <extension
@@ -63,7 +63,7 @@
          point="org.eclipse.ui.navigator.navigatorContent">
       <commonFilter
             activeByDefault="false"
-            class="derivedresources.decoration.DerivedResourceViewerFilter"
+            class="bjmi.derivedresources.decoration.DerivedResourceViewerFilter"
             description="%DerivedResourceViewerFilter.description"
             id="deriveddecoration.derivedResourceViewerFilter"
             name="%DerivedResourceViewerFilter.name">
@@ -91,7 +91,7 @@
    <extension
          point="org.eclipse.jdt.ui.javaElementFilters">
       <filter
-            class="derivedresources.decoration.DerivedResourceViewerFilter"
+            class="bjmi.derivedresources.decoration.DerivedResourceViewerFilter"
             description="%DerivedResourceViewerFilter.description"
             id="derivedresources.decoration.DerivedResourceViewerFilter"
             name="%DerivedResourceViewerFilter.name"

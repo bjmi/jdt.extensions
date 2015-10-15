@@ -1,9 +1,9 @@
-package derivedresources.preferences;
+package bjmi.derivedresources.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
-import derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
  * Class used to initialize default preference values.

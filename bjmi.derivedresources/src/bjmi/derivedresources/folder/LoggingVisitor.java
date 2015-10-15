@@ -1,4 +1,4 @@
-package derivedresources.folder;
+package bjmi.derivedresources.folder;
 
 import java.util.Locale;
 

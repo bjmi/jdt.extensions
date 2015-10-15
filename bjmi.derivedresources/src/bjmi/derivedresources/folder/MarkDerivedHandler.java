@@ -1,4 +1,4 @@
-package derivedresources.folder;
+package bjmi.derivedresources.folder;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -10,10 +10,10 @@ import org.eclipse.jface.window.Window;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 
-import derivedresources.core.DerivedPredicates;
-import derivedresources.internal.DerivedResoucesMessages;
-import derivedresources.preferences.PreferenceConverter;
-import derivedresources.preferences.Preferences;
+import bjmi.derivedresources.core.DerivedPredicates;
+import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.preferences.PreferenceConverter;
+import bjmi.derivedresources.preferences.Preferences;
 
 /**
  * After entering a folder name this {@link IHandler2} traverses all projects and sets the derived flag if the folder name is equal to the

@@ -1,7 +1,7 @@
-package derivedresources.preferences;
+package bjmi.derivedresources.preferences;
 
-import static derivedresources.preferences.Preferences.FOLDER_NAMES;
-import static derivedresources.preferences.Preferences.SCAN_IN_BACKGROUND;
+import static bjmi.derivedresources.preferences.Preferences.FOLDER_NAMES;
+import static bjmi.derivedresources.preferences.Preferences.SCAN_IN_BACKGROUND;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -9,9 +9,9 @@ import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import derivedresources.folder.SearchDerivedFolderJob;
-import derivedresources.internal.DerivedResoucesMessages;
-import derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.folder.SearchDerivedFolderJob;
+import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
  * This class represents a preference page that is contributed to the Preferences dialog. By subclassing

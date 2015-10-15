@@ -1,4 +1,4 @@
-package derivedresources.folder;
+package bjmi.derivedresources.folder;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -9,7 +9,7 @@ import org.eclipse.core.resources.IResourceVisitor;
 
 import com.google.common.collect.Iterables;
 
-import derivedresources.core.DerivedPredicates;
+import bjmi.derivedresources.core.DerivedPredicates;
 
 /**
  * This resource visitor can be applied to any {@link IResource#accept(IResourceVisitor)}. For every folder with given folder name that is
