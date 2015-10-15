@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %bundle.name
+Bundle-SymbolicName: bjmi.derivedresources.tests
+Bundle-Version: 1.4.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %bundle.vendor
+Fragment-Host: bjmi.derivedresources;bundle-version="1.4.0"
+Require-Bundle: org.junit;bundle-version="4.10.0",
+ org.mockito.mockito-all;bundle-version="1.9.5"

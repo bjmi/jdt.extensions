@@ -24,7 +24,7 @@
         <artifactId>tycho-p2-repository-plugin</artifactId>
         <configuration>
           <compress>false</compress>
-          <repositoryName>jdt extensions p2 repo</repositoryName>
+          <repositoryName>jdt extensions / derived resources p2 repo</repositoryName>
         </configuration>
         <executions>
           <execution>

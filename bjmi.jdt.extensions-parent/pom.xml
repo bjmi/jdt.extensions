@@ -109,6 +109,11 @@
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-surefire-plugin</artifactId>
+          <version>${tycho.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-versions-plugin</artifactId>
           <version>${tycho.plugin.version}</version>
         </plugin>
