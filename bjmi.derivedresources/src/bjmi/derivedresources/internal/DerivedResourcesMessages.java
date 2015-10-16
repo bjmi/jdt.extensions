@@ -11,7 +11,7 @@ import org.eclipse.osgi.util.NLS;
  * @since 1.0
  */
 @SuppressWarnings("javadoc")
-public final class DerivedResoucesMessages {
+public final class DerivedResourcesMessages {
 
   public static String MarkDerivedAction_Error_Folder;
 
@@ -61,16 +61,16 @@ public final class DerivedResoucesMessages {
    * @since 1.4
    */
   public static String DerivedResourcesPreferencePage_ScanInBackground_Label_Description;
-
-  private static final String BUNDLE_NAME = "derivedresources.internal.DerivedResoucesMessages";
+  // name of properties file without file extension
+  private static final String RESOURCE_BUNDLE_NAME = DerivedResourcesMessages.class.getCanonicalName();
 
   static {
-    NLS.initializeMessages(BUNDLE_NAME, DerivedResoucesMessages.class);
+    NLS.initializeMessages(RESOURCE_BUNDLE_NAME, DerivedResourcesMessages.class);
   }
 
-  private DerivedResoucesMessages() {
+  private DerivedResourcesMessages() {
     // prevent instantiation
-    throw new UnsupportedOperationException("invocation of sealed constructor");
+    throw new AssertionError("invocation of sealed constructor");
   }
 
 }

@@ -11,7 +11,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 
 import bjmi.derivedresources.core.DerivedPredicates;
-import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcesMessages;
 import bjmi.derivedresources.preferences.PreferenceConverter;
 import bjmi.derivedresources.preferences.Preferences;
 
@@ -37,7 +37,7 @@ public final class MarkDerivedHandler extends AbstractHandler {
       final Iterable<String> folderNames = SEMICOLON_SPLITTER.split(txt);
 
       if (Iterables.isEmpty(folderNames)) {
-        return DerivedResoucesMessages.MarkDerivedAction_Error_AtLeastOneFolder;
+        return DerivedResourcesMessages.MarkDerivedAction_Error_AtLeastOneFolder;
       }
 
       if (Iterables.all(folderNames, DerivedPredicates.notNullNorEmpty())) {
@@ -45,7 +45,7 @@ public final class MarkDerivedHandler extends AbstractHandler {
         return null;
       }
 
-      return DerivedResoucesMessages.MarkDerivedAction_Error_Folder;
+      return DerivedResourcesMessages.MarkDerivedAction_Error_Folder;
     }
 
   }
@@ -59,8 +59,8 @@ public final class MarkDerivedHandler extends AbstractHandler {
   public Object execute(final ExecutionEvent event) {
     final String folderNamesFromPrefs = Preferences.FOLDER_NAMES.getValue();
 
-    final InputDialog dialog = new InputDialog(null, DerivedResoucesMessages.MarkDerivedAction_Input_Title,
-        DerivedResoucesMessages.MarkDerivedAction_Input_Description, folderNamesFromPrefs, new FolderNameValidator());
+    final InputDialog dialog = new InputDialog(null, DerivedResourcesMessages.MarkDerivedAction_Input_Title,
+        DerivedResourcesMessages.MarkDerivedAction_Input_Description, folderNamesFromPrefs, new FolderNameValidator());
     if (dialog.open() == Window.OK) {
       final Iterable<String> folderNames = PreferenceConverter.fromString(dialog.getValue(), ";");
       MarkDerivedJob.schedule(folderNames);

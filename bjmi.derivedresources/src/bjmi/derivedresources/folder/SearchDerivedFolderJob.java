@@ -18,7 +18,7 @@ import org.eclipse.ui.handlers.IHandlerService;
 
 import bjmi.derivedresources.core.Logging;
 import bjmi.derivedresources.folder.DerivedFolderVisitor.VisitorStrategy;
-import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcesMessages;
 import bjmi.derivedresources.internal.DerivedResourcePlugin;
 import bjmi.derivedresources.preferences.Preferences;
 
@@ -55,7 +55,7 @@ public class SearchDerivedFolderJob extends WorkspaceJob implements VisitorStrat
       instance.cancel();
     }
 
-    instance = new SearchDerivedFolderJob(DerivedResoucesMessages.MarkDerivedJob_Job_Name, folderNames);
+    instance = new SearchDerivedFolderJob(DerivedResourcesMessages.MarkDerivedJob_Job_Name, folderNames);
     instance.schedule();
   }
 
@@ -96,7 +96,7 @@ public class SearchDerivedFolderJob extends WorkspaceJob implements VisitorStrat
 
   @Override
   public IStatus runInWorkspace(final IProgressMonitor monitor) {
-    monitor.beginTask(DerivedResoucesMessages.MarkDerivedJob_Search, IProgressMonitor.UNKNOWN);
+    monitor.beginTask(DerivedResourcesMessages.MarkDerivedJob_Search, IProgressMonitor.UNKNOWN);
     try {
       visitor = new CancelableVisitor(new LoggingVisitor(new DerivedFolderVisitor(folderNames, this), monitor));
       ResourcesPlugin.getWorkspace().getRoot().accept(visitor);
@@ -107,7 +107,7 @@ public class SearchDerivedFolderJob extends WorkspaceJob implements VisitorStrat
       // NLS.bind(DerivedResoucesMlessages.MarkDerivedAction_Error_Message, exc.getMessage()));
       return exc.getStatus();
     } finally {
-      monitor.setTaskName(DerivedResoucesMessages.MarkDerivedJob_Search_Complete);
+      monitor.setTaskName(DerivedResourcesMessages.MarkDerivedJob_Search_Complete);
       monitor.done();
       visitor = null;
       if (Preferences.SCAN_IN_BACKGROUND.getValue()) {

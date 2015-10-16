@@ -12,7 +12,7 @@
     <relativePath>../bjmi.jdt.extensions-parent/pom.xml</relativePath>
   </parent>
   <artifactId>bjmi.derivedresources</artifactId>
-  <version>1.4.3-SNAPSHOT</version>
+  <version>1.4.4-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   <dependencies>
     <dependency>

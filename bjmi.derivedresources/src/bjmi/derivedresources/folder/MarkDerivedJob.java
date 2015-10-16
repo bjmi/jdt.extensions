@@ -13,7 +13,7 @@ import org.eclipse.ui.PlatformUI;
 
 import bjmi.derivedresources.core.Logging;
 import bjmi.derivedresources.folder.DerivedFolderVisitor.VisitorStrategy;
-import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcesMessages;
 import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
@@ -46,8 +46,8 @@ public class MarkDerivedJob extends WorkspaceJob {
         asyncExec(new Runnable() {
           @Override
           public void run() {
-            MessageDialog.openError(null, DerivedResoucesMessages.MarkDerivedAction_Error_Title,
-                NLS.bind(DerivedResoucesMessages.MarkDerivedAction_Error_Message, exc.getMessage()));
+            MessageDialog.openError(null, DerivedResourcesMessages.MarkDerivedAction_Error_Title,
+                NLS.bind(DerivedResourcesMessages.MarkDerivedAction_Error_Message, exc.getMessage()));
           }
         });
       }
@@ -70,7 +70,7 @@ public class MarkDerivedJob extends WorkspaceJob {
    *          that should be marked as derived
    */
   public static synchronized void schedule(final Iterable<String> folderNames) {
-    new MarkDerivedJob(DerivedResoucesMessages.MarkDerivedJob_Job_Name, folderNames).schedule();
+    new MarkDerivedJob(DerivedResourcesMessages.MarkDerivedJob_Job_Name, folderNames).schedule();
   }
 
   private static void asyncExec(final Runnable runnable) {
@@ -79,7 +79,7 @@ public class MarkDerivedJob extends WorkspaceJob {
 
   @Override
   public IStatus runInWorkspace(final IProgressMonitor monitor) {
-    monitor.beginTask(DerivedResoucesMessages.MarkDerivedJob_Search, IProgressMonitor.UNKNOWN);
+    monitor.beginTask(DerivedResourcesMessages.MarkDerivedJob_Search, IProgressMonitor.UNKNOWN);
 
     final CountAndMarkDerivedStrategy strategy = new CountAndMarkDerivedStrategy(monitor);
     try {
@@ -92,7 +92,7 @@ public class MarkDerivedJob extends WorkspaceJob {
       // NLS.bind(DerivedResoucesMessages.MarkDerivedAction_Error_Message, exc.getMessage()));
       return exc.getStatus();
     } finally {
-      monitor.setTaskName(DerivedResoucesMessages.MarkDerivedJob_Search_Complete);
+      monitor.setTaskName(DerivedResourcesMessages.MarkDerivedJob_Search_Complete);
       monitor.done();
       visitor = null;
     }
@@ -100,8 +100,8 @@ public class MarkDerivedJob extends WorkspaceJob {
       asyncExec(new Runnable() {
         @Override
         public void run() {
-          MessageDialog.openInformation(null, DerivedResoucesMessages.MarkDerivedAction_Result_Title,
-              NLS.bind(DerivedResoucesMessages.MarkDerivedAction_Result_Message, strategy.count));
+          MessageDialog.openInformation(null, DerivedResourcesMessages.MarkDerivedAction_Result_Title,
+              NLS.bind(DerivedResourcesMessages.MarkDerivedAction_Result_Message, strategy.count));
         }
       });
     }
@@ -111,7 +111,7 @@ public class MarkDerivedJob extends WorkspaceJob {
   @Override
   protected void canceling() {
     if (visitor != null) {
-      final Status status = new Status(IStatus.CANCEL, DerivedResourcePlugin.PLUGIN_ID, DerivedResoucesMessages.MarkDerivedJob_Cancel);
+      final Status status = new Status(IStatus.CANCEL, DerivedResourcePlugin.PLUGIN_ID, DerivedResourcesMessages.MarkDerivedJob_Cancel);
       visitor.cancelWith(status);
     }
     super.canceling();

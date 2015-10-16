@@ -10,7 +10,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import bjmi.derivedresources.folder.SearchDerivedFolderJob;
-import bjmi.derivedresources.internal.DerivedResoucesMessages;
+import bjmi.derivedresources.internal.DerivedResourcesMessages;
 import bjmi.derivedresources.internal.DerivedResourcePlugin;
 
 /**
@@ -34,23 +34,23 @@ public class DerivedResourcesPreferencePage extends FieldEditorPreferencePage im
   public DerivedResourcesPreferencePage() {
     super(GRID);
     setPreferenceStore(DerivedResourcePlugin.getInstance().getPreferenceStore());
-    setDescription(DerivedResoucesMessages.DerivedResourcesPreferencePage_Description);
+    setDescription(DerivedResourcesMessages.DerivedResourcesPreferencePage_Description);
 
   }
 
   @Override
   public void createFieldEditors() {
     final StringFieldEditor stringEditor = new StringFieldEditor(FOLDER_NAMES.prefKey,
-        DerivedResoucesMessages.DerivedResourcesPreferencePage_FolderName_Label, getFieldEditorParent());
+        DerivedResourcesMessages.DerivedResourcesPreferencePage_FolderName_Label, getFieldEditorParent());
     stringEditor.getLabelControl(getFieldEditorParent()).setToolTipText(
-        DerivedResoucesMessages.DerivedResourcesPreferencePage_FolderName_Label_Description);
+        DerivedResourcesMessages.DerivedResourcesPreferencePage_FolderName_Label_Description);
     addField(stringEditor);
 
     final BooleanFieldEditor booleanEditor = new BooleanFieldEditor(SCAN_IN_BACKGROUND.prefKey,
-        DerivedResoucesMessages.DerivedResourcesPreferencePage_ScanInBackground_Label,
+        DerivedResourcesMessages.DerivedResourcesPreferencePage_ScanInBackground_Label,
         BooleanFieldEditor.SEPARATE_LABEL, getFieldEditorParent());
     booleanEditor.getLabelControl(getFieldEditorParent()).setToolTipText(
-        DerivedResoucesMessages.DerivedResourcesPreferencePage_ScanInBackground_Label_Description);
+        DerivedResourcesMessages.DerivedResourcesPreferencePage_ScanInBackground_Label_Description);
     addField(booleanEditor);
   }
 
