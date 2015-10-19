@@ -1,5 +1,5 @@
 # jdt.extensions and derivedresources
-Eclipse Plugin that provides JDT enhancements like Deprecated Members Filter or Label Decorator.
+Eclipse Plugin that provides JDT enhancements like Deprecated Members Filter or Label Decorator.  
 Update site (P2 Repo): https://bjmi.github.io/update-site/
 
 ## Eclipse label decorator that strikes deprecated members text through
