@@ -61,8 +61,9 @@ public final class DerivedResourcesMessages {
    * @since 1.4
    */
   public static String DerivedResourcesPreferencePage_ScanInBackground_Label_Description;
+
   // name of properties file without file extension
-  private static final String RESOURCE_BUNDLE_NAME = DerivedResourcesMessages.class.getCanonicalName();
+  private static final String RESOURCE_BUNDLE_NAME = DerivedResourcesMessages.class.getName();
 
   static {
     NLS.initializeMessages(RESOURCE_BUNDLE_NAME, DerivedResourcesMessages.class);

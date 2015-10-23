@@ -18,10 +18,8 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.junit.Test;
 
-import bjmi.derivedresources.decoration.DerivedResourceLabelDecorator;
-
 /**
- * @author michael
+ * @author Björn Michael
  * @since 1.2.2
  */
 public final class DerivedResourceLabelDecoratorTest {
