@@ -5,10 +5,10 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>bjmi.jdt.extensions</groupId>
-    <artifactId>bjmi.jdt.extensions-parent</artifactId>
+    <groupId>bjmi.tycho</groupId>
+    <artifactId>bjmi.tycho-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>./bjmi.jdt.extensions-parent/pom.xml</relativePath>
+    <relativePath>./bjmi.tycho-parent/pom.xml</relativePath>
   </parent>
   <artifactId>bjmi.jdt.extensions-reactor</artifactId>
   <version>1.0-SNAPSHOT</version>
