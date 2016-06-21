@@ -8,6 +8,12 @@
             id="bjmi.jdt.extensions.filters.DeprecatedMembersFilter"
             name="%DeprecatedMembersFilter.name">
       </filter>
+      <filter
+            class="bjmi.jdt.extensions.filters.JavaLangObjectMembersFilter"
+            description="%JavaLangObjectMembersFilter.description"
+            id="bjmi.jdt.extensions.filters.JavaLangObjectMembersFilter"
+            name="%JavaLangObjectMembersFilter.name">
+      </filter>
    </extension>
    <extension
          point="org.eclipse.ui.navigator.navigatorContent">

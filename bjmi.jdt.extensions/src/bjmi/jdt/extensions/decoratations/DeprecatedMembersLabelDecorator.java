@@ -11,7 +11,7 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.widgets.Display;
 
-import bjmi.jdt.extensions.core.DeprecatedMembers;
+import bjmi.jdt.extensions.core.JdtMembers;
 
 /**
  * A {@link ILightweightLabelDecorator LightweightLabelDecorator} that strikes through text.
@@ -40,7 +40,7 @@ public class DeprecatedMembersLabelDecorator extends BaseLabelProvider implement
     }
 
     final IMember member = (IMember) element;
-    if (DeprecatedMembers.isDeprecated(member)) {
+    if (JdtMembers.isDeprecated(member)) {
       decoration.setFont(strikeThroughFont);
     }
   }
