@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <prerequisites><maven>3.0.3</maven></prerequisites>
     <parent>
         <groupId>bjmi.tycho</groupId>
         <artifactId>bjmi.tycho-parent</artifactId>
