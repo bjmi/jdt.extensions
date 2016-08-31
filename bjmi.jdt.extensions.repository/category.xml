@@ -6,5 +6,5 @@
    <feature url="bjmi.derivedresources.feature_0.0.0.qualifier.jar" id="bjmi.derivedresources.feature" version="0.0.0">
       <category name="jdt.extensions"/>
    </feature>
-   <category-def name="jdt.extensions" label="JDT Extension by bjmi"/>
+   <category-def name="jdt.extensions" label="JDT Extensions by bjmi"/>
 </site>
