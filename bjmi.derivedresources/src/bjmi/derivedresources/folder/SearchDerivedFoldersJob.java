@@ -1,5 +1,6 @@
 package bjmi.derivedresources.folder;
 
+import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -28,15 +29,14 @@ import bjmi.derivedresources.preferences.Preferences;
  * @author Björn Michael
  * @since 1.1 (renamed from MarkDerivedJob)
  */
-// XXX rename to searchderivedfoldersjob
-public class SearchDerivedFolderJob extends WorkspaceJob implements VisitorStrategy {
+public class SearchDerivedFoldersJob extends WorkspaceJob implements VisitorStrategy {
 
-    private static SearchDerivedFolderJob instance;
+    private static SearchDerivedFoldersJob instance;
 
-    private final Iterable<String> folderNames;
+    private final Collection<String> folderNames;
     private CancelableVisitor visitor;
 
-    private SearchDerivedFolderJob(final String jobName, final Iterable<String> folderNames) {
+    private SearchDerivedFoldersJob(final String jobName, final Collection<String> folderNames) {
         super(jobName);
         this.folderNames = folderNames;
 
@@ -50,12 +50,12 @@ public class SearchDerivedFolderJob extends WorkspaceJob implements VisitorStrat
      * @param folderNames
      *            that should be marked as derived.
      */
-    public static synchronized void schedule(final Iterable<String> folderNames) {
+    public static synchronized void schedule(final Collection<String> folderNames) {
         if (instance != null) {
             instance.cancel();
         }
 
-        instance = new SearchDerivedFolderJob(DerivedResourcesMessages.MarkDerivedJob_Job_Name, folderNames);
+        instance = new SearchDerivedFoldersJob(DerivedResourcesMessages.MarkDerivedJob_Job_Name, folderNames);
         instance.schedule();
     }
 

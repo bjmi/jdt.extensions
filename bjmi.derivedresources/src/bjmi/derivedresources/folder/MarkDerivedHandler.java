@@ -1,5 +1,7 @@
 package bjmi.derivedresources.folder;
 
+import java.util.Collection;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.IHandler2;
@@ -8,9 +10,8 @@ import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.window.Window;
 
 import com.google.common.base.Splitter;
-import com.google.common.collect.Iterables;
+import com.google.common.base.Strings;
 
-import bjmi.derivedresources.core.DerivedPredicates;
 import bjmi.derivedresources.internal.DerivedResourcesMessages;
 import bjmi.derivedresources.preferences.PreferenceConverter;
 import bjmi.derivedresources.preferences.Preferences;
@@ -34,18 +35,17 @@ public final class MarkDerivedHandler extends AbstractHandler {
 
     @Override
     public String isValid(final String txt) {
-      final Iterable<String> folderNames = SEMICOLON_SPLITTER.split(txt);
+      final Collection<String> folderNames = SEMICOLON_SPLITTER.splitToList(txt);
 
-      if (Iterables.isEmpty(folderNames)) {
+      if (folderNames.isEmpty()) {
         return DerivedResourcesMessages.MarkDerivedAction_Error_AtLeastOneFolder;
       }
 
-      if (Iterables.all(folderNames, DerivedPredicates.notNullNorEmpty())) {
-        // no error
-        return null;
+      if (folderNames.stream().anyMatch(Strings::isNullOrEmpty)) {
+        return DerivedResourcesMessages.MarkDerivedAction_Error_Folder;
       }
 
-      return DerivedResourcesMessages.MarkDerivedAction_Error_Folder;
+      return null; // no error
     }
 
   }
@@ -62,7 +62,7 @@ public final class MarkDerivedHandler extends AbstractHandler {
     final InputDialog dialog = new InputDialog(null, DerivedResourcesMessages.MarkDerivedAction_Input_Title,
         DerivedResourcesMessages.MarkDerivedAction_Input_Description, folderNamesFromPrefs, new FolderNameValidator());
     if (dialog.open() == Window.OK) {
-      final Iterable<String> folderNames = PreferenceConverter.fromString(dialog.getValue(), ";");
+      final Collection<String> folderNames = PreferenceConverter.fromString(dialog.getValue(), ";");
       MarkDerivedJob.schedule(folderNames);
     }
 

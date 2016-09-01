@@ -5,7 +5,7 @@ import org.eclipse.osgi.util.NLS;
 /**
  * Eclipse messages for l10n.
  *
- * <strong>Messages key declaration must NOT contain final.</strong>
+ * <strong>Message key declarations must NOT be final.</strong>
  *
  * @author Björn Michael
  * @since 1.0

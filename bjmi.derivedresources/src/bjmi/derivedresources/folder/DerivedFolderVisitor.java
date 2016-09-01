@@ -2,14 +2,12 @@ package bjmi.derivedresources.folder;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.util.Collection;
+
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
-
-import com.google.common.collect.Iterables;
-
-import bjmi.derivedresources.core.DerivedPredicates;
 
 /**
  * This resource visitor can be applied to any {@link IResource#accept(IResourceVisitor)}. For every folder with given folder name that is
@@ -26,11 +24,11 @@ final class DerivedFolderVisitor implements IResourceVisitor {
 
   }
 
-  private final Iterable<String> folderNames;
+  private final Collection<String> folderNames;
 
   private final VisitorStrategy visitorStrategy;
 
-  public DerivedFolderVisitor(final Iterable<String> folderNames, final VisitorStrategy visitorStrategy) {
+  public DerivedFolderVisitor(final Collection<String> folderNames, final VisitorStrategy visitorStrategy) {
     this.folderNames = checkNotNull(folderNames);
     this.visitorStrategy = checkNotNull(visitorStrategy);
   }
@@ -40,20 +38,20 @@ final class DerivedFolderVisitor implements IResourceVisitor {
     if (resource instanceof IProject) {
       final IProject project = (IProject) resource;
       if (!project.isOpen()) {
-        // project must be open otherwise the visitor causes a CoreException
-        return false;
+        return false; // project must be open otherwise the visitor causes a CoreException
       }
     }
 
     if (resource instanceof IFolder) {
       final IFolder folder = (IFolder) resource;
-      if (Iterables.any(folderNames, DerivedPredicates.equalIgnoreCase(folder.getName()))) {
+      if (folderNames.stream().anyMatch(f -> f.equalsIgnoreCase(folder.getName()))) {
         if (folder.exists() && !folder.isDerived()) {
           visitorStrategy.apply(folder);
         }
         return false;
       }
     }
+
     return true;
   }
 

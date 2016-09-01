@@ -1,6 +1,7 @@
 package bjmi.derivedresources.internal;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.Field;
@@ -23,7 +24,8 @@ public final class DerivedResourcesMessagesTest {
       int modifiers = field.getModifiers();
       if (Modifier.isPublic(modifiers) && Modifier.isStatic(modifiers)) {
         atLeastOneFieldFound |= true;
-        String message = (String) field.get(field);
+        String message = (String) field.get(null);
+        assertNotNull("missing NLS for field: " + field.getName(), message);
         assertFalse(message.startsWith(missingPrefix));
       }
     }

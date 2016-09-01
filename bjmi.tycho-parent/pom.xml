@@ -16,8 +16,8 @@
     <install.plugin.version>2.5.2</install.plugin.version>
     <resources.plugin.version>3.0.1</resources.plugin.version>
     <site.plugin.version>3.5.1</site.plugin.version>
-    <tycho.plugin.version>0.25.0</tycho.plugin.version>
-    <versions.plugin.version>2.2</versions.plugin.version>
+    <tycho.plugin.version>0.26.0</tycho.plugin.version>
+    <versions.plugin.version>2.3</versions.plugin.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -111,6 +111,9 @@
           <groupId>org.eclipse.tycho</groupId>
           <artifactId>tycho-surefire-plugin</artifactId>
           <version>${tycho.plugin.version}</version>
+          <configuration>
+            <useJDK>BREE</useJDK>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
@@ -127,8 +130,13 @@
   </build>
   <repositories>
     <repository>
-      <id>eclipse-mars</id>
-      <url>http://download.eclipse.org/releases/mars/</url>
+      <id>eclipse-neon</id>
+      <url>http://download.eclipse.org/releases/neon/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>orbit-neon</id>
+      <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/</url>
       <layout>p2</layout>
     </repository>
   </repositories>

@@ -1,5 +1,6 @@
 package bjmi.derivedresources.folder;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class MarkDerivedJob extends WorkspaceJob {
     static final class CountAndMarkDerivedStrategy implements VisitorStrategy {
 
         private final IProgressMonitor monitor;
-        private final List<String> paths = new LinkedList<String>();
+        private final List<String> paths = new LinkedList<>();
 
         CountAndMarkDerivedStrategy(final IProgressMonitor progressMonitor) {
             monitor = progressMonitor;
@@ -60,10 +61,10 @@ public class MarkDerivedJob extends WorkspaceJob {
 
     }
 
-    private final Iterable<String> folderNames;
+    private final Collection<String> folderNames;
     private CancelableVisitor visitor;
 
-    private MarkDerivedJob(final String jobName, final Iterable<String> folderNames) {
+    private MarkDerivedJob(final String jobName, final Collection<String> folderNames) {
         super(jobName);
         this.folderNames = folderNames;
     }
@@ -74,7 +75,7 @@ public class MarkDerivedJob extends WorkspaceJob {
      * @param folderNames
      *            that should be marked as derived
      */
-    public static synchronized void schedule(final Iterable<String> folderNames) {
+    public static synchronized void schedule(final Collection<String> folderNames) {
         new MarkDerivedJob(DerivedResourcesMessages.MarkDerivedJob_Job_Name, folderNames).schedule();
     }
 

@@ -11,6 +11,8 @@ import static org.mockito.Mockito.when;
 import java.util.Arrays;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
@@ -137,6 +139,7 @@ public final class DerivedResourceLabelDecoratorTest {
     // setup data
     final Image original = ImageDescriptor.getMissingImageDescriptor().createImage();
     assertNotNull(original);
+    IResource findMember = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path("target"));
     final IResource res = mock(IResource.class);
 
     final DerivedResourceLabelDecorator sut = new DerivedResourceLabelDecorator();

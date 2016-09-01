@@ -3,15 +3,17 @@ package bjmi.derivedresources.preferences;
 import static bjmi.derivedresources.preferences.Preferences.FOLDER_NAMES;
 import static bjmi.derivedresources.preferences.Preferences.SCAN_IN_BACKGROUND;
 
+import java.util.Collection;
+
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import bjmi.derivedresources.folder.SearchDerivedFolderJob;
-import bjmi.derivedresources.internal.DerivedResourcesMessages;
+import bjmi.derivedresources.folder.SearchDerivedFoldersJob;
 import bjmi.derivedresources.internal.DerivedResourcePlugin;
+import bjmi.derivedresources.internal.DerivedResourcesMessages;
 
 /**
  * This class represents a preference page that is contributed to the Preferences dialog. By subclassing
@@ -20,7 +22,7 @@ import bjmi.derivedresources.internal.DerivedResourcePlugin;
  * <p>
  * This page is used to modify preferences only. They are stored in the preference store that belongs to the main
  * plug-in class. That way, preferences can be accessed directly via the preference store. TODO docu
- * 
+ *
  * @author Björn Michael
  * @since 1.2
  */
@@ -67,8 +69,8 @@ public class DerivedResourcesPreferencePage extends FieldEditorPreferencePage im
     canContinue &= super.performOk();
 
     if (SCAN_IN_BACKGROUND.getValue()) {
-      final Iterable<String> folderNames = PreferenceConverter.fromString(FOLDER_NAMES.getValue(), ";");
-      SearchDerivedFolderJob.schedule(folderNames);
+      final Collection<String> folderNames = PreferenceConverter.fromString(FOLDER_NAMES.getValue(), ";");
+      SearchDerivedFoldersJob.schedule(folderNames);
     }
 
     return canContinue;

@@ -3,15 +3,16 @@ package bjmi.derivedresources.internal;
 import static bjmi.derivedresources.preferences.Preferences.FOLDER_NAMES;
 import static bjmi.derivedresources.preferences.Preferences.SCAN_IN_BACKGROUND;
 
+import java.util.Collection;
+
+import bjmi.derivedresources.folder.SearchDerivedFoldersJob;
+import bjmi.derivedresources.preferences.PreferenceConverter;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import bjmi.derivedresources.folder.SearchDerivedFolderJob;
-import bjmi.derivedresources.preferences.PreferenceConverter;
-
 /**
- * {@link BundleActivator} of derived resouces bundle.
+ * {@link BundleActivator} of derived resources bundle.
  *
  * @author Björn Michael
  * @since 1.2
@@ -32,8 +33,8 @@ public class DerivedResourcePlugin extends AbstractUIPlugin {
   private static void init() {
     final Boolean doBackgroundScan = SCAN_IN_BACKGROUND.getValue();
     if (doBackgroundScan) {
-      final Iterable<String> folderNames = PreferenceConverter.fromString(FOLDER_NAMES.getValue(), ";");
-      SearchDerivedFolderJob.schedule(folderNames);
+      final Collection<String> folderNames = PreferenceConverter.fromString(FOLDER_NAMES.getValue(), ";");
+      SearchDerivedFoldersJob.schedule(folderNames);
     }
   }
 
