@@ -1,6 +1,9 @@
 package bjmi.jdt.extensions.decoratations;
 
 import org.eclipse.jdt.core.IMember;
+import org.eclipse.jdt.core.IPackageFragment;
+import org.eclipse.jdt.core.IType;
+import org.eclipse.jdt.core.ITypeRoot;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.IDecoration;
@@ -42,9 +45,31 @@ public class DeprecatedMembersLabelDecorator extends BaseLabelProvider implement
             return;
         }
 
-        final IMember member = (IMember) element;
-        if (JdtMembers.isDeprecated(member)) {
+        if (element instanceof IPackageFragment) {
+          // TODO
+          return;
+        }
+
+        if (element instanceof ITypeRoot) {
+          if (JdtMembers.isDeprecated((ITypeRoot) element)) {
             decoration.setFont(strikeThroughFont);
+          }
+          return;
+        }
+
+        if (element instanceof IType) {
+          if (JdtMembers.isDeprecated((IType) element)) {
+            decoration.setFont(strikeThroughFont);
+          }
+          return;
+        }
+
+        // see org.eclipse.ui.decorators <enablement> section
+        if (element instanceof IMember) {
+          if (JdtMembers.isDeprecated((IMember) element)) {
+            decoration.setFont(strikeThroughFont);
+          }
+          return;
         }
     }
 

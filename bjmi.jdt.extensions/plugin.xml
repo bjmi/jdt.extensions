@@ -12,11 +12,6 @@
          <description>
             %DeprecatedMembersLabelDecorator.description
          </description>
-         <enablement>
-            <objectClass
-                  name="org.eclipse.jdt.core.IMember">
-            </objectClass>
-         </enablement>
       </decorator>
    </extension>
 </plugin>
