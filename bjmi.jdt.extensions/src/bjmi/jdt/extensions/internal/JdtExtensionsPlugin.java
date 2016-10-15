@@ -11,35 +11,35 @@ import org.osgi.framework.BundleContext;
  */
 public class JdtExtensionsPlugin extends AbstractUIPlugin {
 
-  // The shared instance
-  private static JdtExtensionsPlugin plugin;
+    // The shared instance
+    private static JdtExtensionsPlugin plugin;
 
-  /**
-   * @since 1.1
-   */
-  public JdtExtensionsPlugin() {
-    super();
-  }
+    /**
+     * @since 1.1
+     */
+    public JdtExtensionsPlugin() {
+        super();
+    }
 
-  /**
-   * Returns the shared instance
-   *
-   * @return the shared instance
-   */
-  public static JdtExtensionsPlugin getInstance() {
-    return plugin;
-  }
+    /**
+     * Returns the shared instance
+     *
+     * @return the shared instance
+     */
+    public static JdtExtensionsPlugin getInstance() {
+        return plugin;
+    }
 
-  @Override
-  public void start(final BundleContext context) throws Exception {
-    super.start(context);
-    plugin = this;
-  }
+    @Override
+    public void start(final BundleContext context) throws Exception {
+        super.start(context);
+        plugin = this;
+    }
 
-  @Override
-  public void stop(final BundleContext context) throws Exception {
-    plugin = null;
-    super.stop(context);
-  }
+    @Override
+    public void stop(final BundleContext context) throws Exception {
+        plugin = null;
+        super.stop(context);
+    }
 
 }

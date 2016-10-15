@@ -21,62 +21,65 @@ import bjmi.jdt.extensions.core.JdtMembers;
  */
 public class DeprecatedMembersLabelDecorator extends BaseLabelProvider implements ILightweightLabelDecorator {
 
-  private Font strikeThroughFont;
+    private Font strikeThroughFont;
 
-  public DeprecatedMembersLabelDecorator() {
-    initializeFonts();
-  }
-
-  @Override
-  public void addListener(final ILabelProviderListener listener) {
-    // nobody has to be informed
-  }
-
-  @Override
-  public void decorate(final Object element, final IDecoration decoration) {
-    // strike through style is not supported on current platform
-    if (strikeThroughFont == null) {
-      return;
+    /**
+     * Creates a new label decorator instance.
+     */
+    public DeprecatedMembersLabelDecorator() {
+        initializeFonts();
     }
 
-    final IMember member = (IMember) element;
-    if (JdtMembers.isDeprecated(member)) {
-      decoration.setFont(strikeThroughFont);
+    @Override
+    public void addListener(final ILabelProviderListener listener) {
+        // nobody has to be informed
     }
-  }
 
-  @Override
-  public void dispose() {
-    // XXX dispose font, but when?
-  }
-
-  @Override
-  public boolean isLabelProperty(final Object element, final String property) {
-    return true;
-  }
-
-  @Override
-  public void removeListener(final ILabelProviderListener listener) {
-    // nobody has to be informed
-  }
-
-  // only win32 has strike-through font
-  private void initializeFonts() {
-    final FontData[] defaultData = JFaceResources.getDefaultFont().getFontData();
-
-    if (defaultData != null && defaultData.length == 1) {
-      final FontData data = new FontData(defaultData[0].getName(), defaultData[0].getHeight(), defaultData[0].getStyle());
-
-      if ("win32".equals(SWT.getPlatform())) { //$NON-NLS-1$
-        // NOTE: Windows only, for: data.data.lfStrikeOut = 1;
-        try {
-          data.data.lfStrikeOut = 1;
-          strikeThroughFont = new Font(Display.getCurrent(), data);
-        } catch (final Throwable t) {
-          // ignore
+    @Override
+    public void decorate(final Object element, final IDecoration decoration) {
+        // strike through style is not supported on current platform
+        if (strikeThroughFont == null) {
+            return;
         }
-      }
+
+        final IMember member = (IMember) element;
+        if (JdtMembers.isDeprecated(member)) {
+            decoration.setFont(strikeThroughFont);
+        }
     }
-  }
+
+    @Override
+    public void dispose() {
+        // XXX dispose font, but when?
+    }
+
+    @Override
+    public boolean isLabelProperty(final Object element, final String property) {
+        return true;
+    }
+
+    @Override
+    public void removeListener(final ILabelProviderListener listener) {
+        // nobody has to be informed
+    }
+
+    // only win32 has strike-through font
+    private void initializeFonts() {
+        final FontData[] defaultData = JFaceResources.getDefaultFont().getFontData();
+
+        if (defaultData != null && defaultData.length == 1) {
+            final FontData data = new FontData(defaultData[0].getName(), defaultData[0].getHeight(), defaultData[0].getStyle());
+
+            if ("win32".equals(SWT.getPlatform())) { //$NON-NLS-1$
+                // NOTE: Windows only, for: data.data.lfStrikeOut = 1;
+                try {
+                    data.data.lfStrikeOut = 1;
+                    strikeThroughFont = new Font(Display.getCurrent(), data);
+                } catch (final Throwable t) {
+                    // ignore
+                }
+            }
+        }
+    }
 
 }
