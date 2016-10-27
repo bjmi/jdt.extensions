@@ -13,30 +13,26 @@ import bjmi.derivedresources.internal.DerivedResourcePlugin;
  */
 public final class Logging {
 
-  private Logging() {
-    // prevent instantiation
-    throw new AssertionError("invocation of sealed constructor");
-  }
+    private Logging() {
+        throw new AssertionError("invocation of sealed constructor"); // prevent instantiation
+    }
 
-  /**
-   * Logs an entry with {@link DerivedResourcePlugin} logger.
-   *
-   * @param status
-   *          being used as log entry
-   * @since 1.4.3
-   */
-  public static void log(final IStatus status) {
-    DerivedResourcePlugin.getInstance().getLog().log(status);
-  }
+    /**
+     * Logs an entry with {@link DerivedResourcePlugin} logger.
+     *
+     * @param status being used as log entry
+     * @since 1.4.3
+     */
+    public static void log(final IStatus status) {
+        DerivedResourcePlugin.getInstance().getLog().log(status);
+    }
 
-  /**
-   * @param plugin
-   *          logger being used
-   * @param status
-   *          being used as log entry
-   */
-  public static void log(final Plugin plugin, final IStatus status) {
-    plugin.getLog().log(status);
-  }
+    /**
+     * @param plugin logger being used
+     * @param status being used as log entry
+     */
+    public static void log(final Plugin plugin, final IStatus status) {
+        plugin.getLog().log(status);
+    }
 
 }

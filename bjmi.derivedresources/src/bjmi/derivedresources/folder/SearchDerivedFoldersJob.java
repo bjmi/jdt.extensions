@@ -27,7 +27,7 @@ import bjmi.derivedresources.preferences.Preferences;
  * Search for folders that aren't marked as derived.
  *
  * @author Björn Michael
- * @since 1.1 (renamed from MarkDerivedJob)
+ * @since 1.1 (formerly MarkDerivedJob)
  */
 public class SearchDerivedFoldersJob extends WorkspaceJob implements VisitorStrategy {
 
