@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
-  <extension
-         point="org.eclipse.jdt.ui.javaElementFilters">
-      <filter
-            class="bjmi.jdt.extensions.filters.DeprecatedMembersFilter"
-            description="%DeprecatedMembersFilter.description"
-            id="bjmi.jdt.extensions.filters.DeprecatedMembersFilter"
-            name="%DeprecatedMembersFilter.name">
-      </filter>
-      <filter
-            class="bjmi.jdt.extensions.filters.JavaLangObjectMembersFilter"
-            description="%JavaLangObjectMembersFilter.description"
-            id="bjmi.jdt.extensions.filters.JavaLangObjectMembersFilter"
-            name="%JavaLangObjectMembersFilter.name">
-      </filter>
-   </extension>
-   <extension
-         point="org.eclipse.ui.navigator.navigatorContent">
-      <commonFilter
-            activeByDefault="false"
-            class="bjmi.jdt.extensions.filters.DeprecatedMembersFilter"
-            description="%DeprecatedMembersFilter.description"
-            id="bjmi.jdt.extensions.deprecatedMembersFilter"
-            name="%DeprecatedMembersFilter.name">
-      </commonFilter>
-   </extension>
-   <extension
-         point="org.eclipse.ui.navigator.viewer">
-      <viewerContentBinding
-            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
-         <includes>
-            <contentExtension
-                  pattern="bjmi.jdt.extensions.deprecatedMembersFilter">
-            </contentExtension>
-         </includes>
-      </viewerContentBinding>
-      <viewerContentBinding
-            viewerId="org.eclipse.jdt.ui.PackageExplorer">
-         <includes>
-            <contentExtension
-                  pattern="bjmi.jdt.extensions.deprecatedMembersFilter">
-            </contentExtension>
-         </includes>
-      </viewerContentBinding>
-   </extension>
    <extension
          point="org.eclipse.ui.decorators">
       <decorator
