@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="bjmi.jdt.extensions.feature"
-      label="%feature.name"
-      version="1.2.0.qualifier"
-      provider-name="%feature.vendor">
+        id="bjmi.jdt.extensions.feature"
+        label="%feature.name"
+        version="1.3.0.qualifier"
+        provider-name="%feature.vendor">
 
-   <description>
-      %feature.description.text
-   </description>
+    <description>
+        %feature.description.text
+    </description>
 
-   <copyright>
-      %feature.copyright.text
-   </copyright>
+    <copyright>
+        %feature.copyright.text
+    </copyright>
 
-   <license url="%feature.license.url">
-      %feature.license.text
-   </license>
+    <license url="%feature.license.url">
+        %feature.license.text
+    </license>
 
-   <requires>
-      <import feature="org.eclipse.jdt" version="3.7.0" match="greaterOrEqual"/>
-   </requires>
+    <requires>
+        <import feature="org.eclipse.jdt" version="3.7.0" match="greaterOrEqual"/>
+    </requires>
 
-   <plugin
-         id="bjmi.jdt.extensions"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+    <plugin
+            id="bjmi.jdt.extensions"
+            download-size="0"
+            install-size="0"
+            version="0.0.0"
+            unpack="false"/>
 
 </feature>
