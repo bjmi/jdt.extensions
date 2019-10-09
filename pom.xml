@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <prerequisites><maven>3.0.3</maven></prerequisites>
-  <parent>
-    <groupId>bjmi.tycho</groupId>
-    <artifactId>bjmi.tycho-parent</artifactId>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>bjmi.tycho</groupId>
+        <artifactId>bjmi.tycho-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>./bjmi.tycho-parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>bjmi.jdt.extensions-reactor</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>./bjmi.tycho-parent/pom.xml</relativePath>
-  </parent>
-  <artifactId>bjmi.jdt.extensions-reactor</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-    <module>bjmi.jdt.extensions</module>
-    <module>bjmi.jdt.extensions.feature</module>
-    <module>bjmi.jdt.extensions.repository</module>
-    <module>bjmi.derivedresources</module>
-    <module>bjmi.derivedresources.feature</module>
-    <module>bjmi.derivedresources.tests</module>
-  </modules>
+    <packaging>pom</packaging>
+    <modules>
+        <module>bjmi.derivedresources.feature</module>
+        <module>bjmi.derivedresources.tests</module>
+        <module>bjmi.derivedresources</module>
+        <module>bjmi.jdt.extensions.feature</module>
+        <module>bjmi.jdt.extensions.repository</module>
+        <module>bjmi.jdt.extensions</module>
+        <module>target-definition</module>
+    </modules>
 </project>
